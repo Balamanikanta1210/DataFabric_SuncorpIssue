@@ -1,0 +1,19 @@
+{
+  "version": "3.0.0.0",
+  "bundleHash": "L7RksbkiU2F2jOkXjaKMvGi80HAQiZRSJ4M1vpnzuA",
+  "addedAssemblyNames": [],
+  "discardedAssemblyNames": [],
+  "discardedAssemblyReplacements": {},
+  "assembliesJitInfo": {
+    "DataService.gmGcYLov23gg": {
+      "createdAt": "2026-08-10T02:57:57.0838456+00:00",
+      "providerName": "DataService",
+      "rootNamespace": "DataService.Entities",
+      "typeNames": [
+        "Employee",
+        "SystemUser",
+        "UserType"
+      ]
+    }
+  }
+}

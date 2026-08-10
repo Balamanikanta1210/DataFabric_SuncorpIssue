@@ -1,0 +1,22 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "RPA Workflow",
+    "kind": "package",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "0f0b5670-7496-499c-b827-c93500be7f29",
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "RPA Workflow"
+    },
+    "locks": [],
+    "key": "622ad9bb-1926-4537-9c15-7b548b4b2efd",
+    "files": []
+  }
+}

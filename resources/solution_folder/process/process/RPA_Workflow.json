@@ -1,0 +1,44 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "RPA Workflow",
+    "kind": "process",
+    "type": "process",
+    "apiVersion": "orchestrator.uipath.com/v1",
+    "projectKey": "0f0b5670-7496-499c-b827-c93500be7f29",
+    "dependencies": [
+      {
+        "kind": "package",
+        "name": "RPA Workflow"
+      }
+    ],
+    "runtimeDependencies": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "type": "Process",
+      "name": "RPA Workflow",
+      "package": {
+        "key": "622ad9bb-1926-4537-9c15-7b548b4b2efd"
+      },
+      "packageName": "Suncorp_DataFabric.process.RPA.Workflow",
+      "jobPriority": "Medium",
+      "jobRecording": "Disabled",
+      "targetFrameworkValue": "Portable",
+      "duration": 40,
+      "frequency": 500,
+      "quality": 100,
+      "remoteControlAccess": "None",
+      "retentionAction": "Delete",
+      "retentionPeriod": 30,
+      "staleRetentionAction": "Delete",
+      "staleRetentionPeriod": 180
+    },
+    "locks": [],
+    "key": "e22153c3-2685-459e-9d11-4bb809333f74",
+    "files": []
+  }
+}
