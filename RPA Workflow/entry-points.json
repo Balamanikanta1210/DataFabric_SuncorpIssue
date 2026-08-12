@@ -18,6 +18,13 @@
             "type": "string",
             "x-default-expression": "\"10\"",
             "default": "10"
+          },
+          "newArgument": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            },
+            "x-default-expression": "New Dictionary(Of System.String, System.String) From { {\"101\", \"Bala\"},{\"102\", \"Mani\"},{\"103\", \"Kanta\"} }"
           }
         },
         "required": []

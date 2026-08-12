@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.Name="Balamanikanta" this:Main.employeeid="10"
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.Name="Balamanikanta" this:Main.employeeid="10" this:Main.newArgument="[New Dictionary(Of System.String, System.String) From { {&quot;101&quot;, &quot;Bala&quot;},{&quot;102&quot;, &quot;Mani&quot;},{&quot;103&quot;, &quot;Kanta&quot;} }]"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:de="clr-namespace:DataService.Entities;assembly=DataService.gmGcYLov23gg"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -13,17 +13,18 @@
   <x:Members>
     <x:Property Name="Name" Type="InArgument(x:String)" />
     <x:Property Name="employeeid" Type="InArgument(x:String)" />
+    <x:Property Name="newArgument" Type="InArgument(scg:Dictionary(x:String, x:String))" />
   </x:Members>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
       <x:String>UiPath.Core.Activities</x:String>
       <x:String>System</x:String>
-      <x:String>System.Activities</x:String>
       <x:String>UiPath.DataService.Activities</x:String>
       <x:String>UiPath.DataService.Definition</x:String>
       <x:String>UiPath.DataService.Activities.Models</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
       <x:String>System.Activities.Validation</x:String>
       <x:String>System.Activities.XamlIntegration</x:String>
@@ -66,6 +67,9 @@
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap:VirtualizedContainerService.HintSize="356,732" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(de:Employee)" Default="[new System.Collections.Generic.List(Of DataService.Entities.Employee) From {  }]" Name="newemp" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -74,6 +78,14 @@
     <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
     <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[employeeid]" />
     <ui:LogMessage DisplayName="Log Message 1" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;&quot;&quot;hello world&quot;&quot;&quot;]" />
+    <Assign DisplayName="Assign" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(de:Employee)">[newemp]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(de:Employee)">[newArgument.Select(Function(kvp) New DataService.Entities.Employee With {.Empid = kvp.Key, .Name = kvp.Value}).ToList()]</InArgument>
+      </Assign.Value>
+    </Assign>
     <uda:CreateEntityRecord x:TypeArguments="de:Employee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="85d11855-6594-f111-9b33-6045bdd6d6ea" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new DataService.Entities.Employee() With {  .Empid = employeeid,  .Name = Name }]" ScopeValue="Tenant" TimeoutInMs="30000">
       <uda:CreateEntityRecord.State>
         <udam:RecordState>
