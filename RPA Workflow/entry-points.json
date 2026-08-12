@@ -6,7 +6,22 @@
       "filePath": "Main.xaml",
       "uniqueId": "2acb47f4-feda-4a5f-82f5-af7123a554a2",
       "type": "Process",
-      "input": null,
+      "input": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "x-default-expression": "\"Balamanikanta\"",
+            "default": "Balamanikanta"
+          },
+          "employeeid": {
+            "type": "string",
+            "x-default-expression": "\"10\"",
+            "default": "10"
+          }
+        },
+        "required": []
+      },
       "output": null
     }
   ]

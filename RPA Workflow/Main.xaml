@@ -1,23 +1,28 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main"
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" this:Main.Name="Balamanikanta" this:Main.employeeid="10"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:de="clr-namespace:DataService.Entities;assembly=DataService.gmGcYLov23gg"
  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
  xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
  xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
  xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib"
+ xmlns:this="clr-namespace:"
  xmlns:uda="clr-namespace:UiPath.DataService.Activities;assembly=UiPath.DataService.Activities.Core"
  xmlns:udam="clr-namespace:UiPath.DataService.Activities.Models;assembly=UiPath.DataService.Activities.Core"
  xmlns:ui="http://schemas.uipath.com/workflow/activities"
  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="Name" Type="InArgument(x:String)" />
+    <x:Property Name="employeeid" Type="InArgument(x:String)" />
+  </x:Members>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
       <x:String>UiPath.DataService.Activities</x:String>
       <x:String>UiPath.DataService.Definition</x:String>
       <x:String>UiPath.DataService.Activities.Models</x:String>
-      <x:String>System</x:String>
       <x:String>UiPath.Shared.Activities</x:String>
-      <x:String>System.Activities</x:String>
-      <x:String>UiPath.Core.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
       <x:String>System.Activities.Validation</x:String>
@@ -67,19 +72,20 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
-    <uda:CreateEntityRecord x:TypeArguments="de:Employee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="85d11855-6594-f111-9b33-6045bdd6d6ea" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new DataService.Entities.Employee() With {  .Empid = &quot;2&quot;,  .Name = &quot;Bala&quot; }]" ScopeValue="Tenant" TimeoutInMs="30000">
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Name]" />
+    <uda:CreateEntityRecord x:TypeArguments="de:Employee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="85d11855-6594-f111-9b33-6045bdd6d6ea" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new DataService.Entities.Employee() With {  .Empid = employeeid,  .Name = Name }]" ScopeValue="Tenant" TimeoutInMs="30000">
       <uda:CreateEntityRecord.State>
         <udam:RecordState>
           <udam:RecordState.SelectedFields>
             <scg:List x:TypeArguments="udam:DynamicEntityField" Capacity="2">
               <udam:DynamicEntityField Id="8fd11855-6594-f111-9b33-6045bdd6d6ea" Name="Empid">
                 <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">2</InArgument>
+                  <InArgument x:TypeArguments="x:String">[employeeid]</InArgument>
                 </udam:DynamicEntityField.ArgumentValue>
               </udam:DynamicEntityField>
               <udam:DynamicEntityField Id="90d11855-6594-f111-9b33-6045bdd6d6ea" Name="Name">
                 <udam:DynamicEntityField.ArgumentValue>
-                  <InArgument x:TypeArguments="x:String">Bala</InArgument>
+                  <InArgument x:TypeArguments="x:String">[Name]</InArgument>
                 </udam:DynamicEntityField.ArgumentValue>
               </udam:DynamicEntityField>
             </scg:List>
