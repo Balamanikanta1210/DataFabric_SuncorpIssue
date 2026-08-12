@@ -72,7 +72,8 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ManualTrigger Result="{x:Null}" DisplayName="Manual Trigger" sap2010:WorkflowViewState.IdRef="ManualTrigger_1" />
-    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Name]" />
+    <ui:LogMessage DisplayName="Log Message" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[employeeid]" />
+    <ui:LogMessage DisplayName="Log Message 1" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;&quot;&quot;hello world&quot;&quot;&quot;]" />
     <uda:CreateEntityRecord x:TypeArguments="de:Employee" InputEntity="{x:Null}" IsInRecordView="{x:Null}" OutputEntity="{x:Null}" SolutionEntityKey="{x:Null}" SolutionEntityName="{x:Null}" sap:WorkflowViewStateService.ViewState="{x:Null}" VisibleDynamicPropertiesInfo="{x:Null}" ContinueOnError="False" DisplayName="Create Entity Record" EntityId="85d11855-6594-f111-9b33-6045bdd6d6ea" ExpansionDepth="2" sap2010:WorkflowViewState.IdRef="CreateEntityRecord`1_1" InputEntityInFieldView="[new DataService.Entities.Employee() With {  .Empid = employeeid,  .Name = Name }]" ScopeValue="Tenant" TimeoutInMs="30000">
       <uda:CreateEntityRecord.State>
         <udam:RecordState>
